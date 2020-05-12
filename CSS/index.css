@@ -1,9 +1,14 @@
 body
 {
-    background-color: peru;
+    background-color: #ecf0f1;
 }
 
 h1
 {
-    color: #fff;
+    color:#34495e;
+}
+
+.clicked
+{
+    color: #7f8c8d;
 }

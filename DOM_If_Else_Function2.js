@@ -1,14 +1,9 @@
 const title = document.querySelector("#title"); /* HTML을 이 DOM 객체로 바꿈 */
 
-const CLICKED_CLASS = "cliecked";
+const CLICKED_CLASS = "clicked";
 
 function handleClick(){
-    const currentClass = title.className;
-    if(currentClass !== CLICKED_CLASS){
-        title.className = CLICKED_CLASS
-    } else{
-        title.className = "";
-    }
+title.classList.toggle(CLICKED_CLASS);
 }
 
 function init() {

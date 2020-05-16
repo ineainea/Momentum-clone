@@ -6,6 +6,8 @@ const IMG_NUMBER = 8; // 사진 갯수
 function paintImage(imgNumber){
     const image = new Image();
     image.src = `images/${imgNumber + 1}.jpg`;
+    image.style.height = '100%';
+    image.style.width = '100%';
     image.classList.add("bgImage");
     body.prepend(image);
 }

@@ -5,7 +5,18 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = 'toDos';
 
-const toDos = [];
+let toDos = [];
+
+function deleteToDo(event) {
+    const btn = event.target; //클릭한 span 태그의 반환하여 btn에 선언
+    const li = btn.parentNode; //.parentNode를 통해 클릭한 태크의 부모 요소를 찾아서 li에 대입
+    toDoList.removeChild(li); // 클릭한 태그의 li 태그 삭제
+    const cleanToDos = toDos.filter(function(toDo){ //filter() 메서드는 주어진 함수의 테스트를 통과하는 모든 요소를 모아 새로운 배열로 반환함.
+        return toDo.id !== parseInt(li.id);
+    });
+    toDos = cleanToDos
+    saveToDos();
+}
 
 // 로컬스토리지에 toDos 저장 (문자열로 저장해야함.)
 function saveToDos() {
@@ -18,11 +29,12 @@ function paintToDo(text)
     const li = document.createElement("li"); // 빈 li 생성
     const delBtn = document.createElement("button"); // 삭제를 위한 버튼 생성
     delBtn.innerHTML = "❌";
+    delBtn.addEventListener("click", deleteToDo);
     const span = document.createElement("span"); // 텍스트 입력을 위한 span 생성
     const newId = toDos.length + 1; // id를 li에 넣기위해 상수화함.
     span.innerText = text;
-    li.appendChild(delBtn); //li태그 안에 delbtn태그를 상속시킴
     li.appendChild(span); //li태그 안에 span태그를 상속시키
+    li.appendChild(delBtn); //li태그 안에 delbtn태그를 상속시킴
     li.id = newId; // Id를 li에도 추가, 나중에 li를 삭제할 때를 위해서 
     toDoList.appendChild(li); //js-toDoList클래스 안에 li태그를 상속시킴
     

@@ -1,14 +1,32 @@
 body
 {
+    margin: 100px auto;
     background-color: #ecf0f1;
 }
 
-h1
+.btn
 {
-    color:#34495e;
+    cursor: pointer;
+    transition: 0.5s ease-out;
 }
+
+h1
+{}
 
 .clicked
 {
     color: #7f8c8d;
 }
+
+.form,
+.greetings
+{
+    display: none;
+}
+
+.showing
+{
+    display: block;
+}
+
+@media screen and 

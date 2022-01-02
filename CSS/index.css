@@ -71,6 +71,7 @@ h1
     height: 100%;
     z-index: -1;
     animation: fadeIn .3s linear;
+    object-fit: cover;
 }
 
 h1

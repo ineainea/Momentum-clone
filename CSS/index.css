@@ -101,7 +101,7 @@ input
 {
     text-align: center;
     color: #fff;
-    font-size: 25px;
+    font-size: 65px;
     border: none;
     background: transparent;
     border-bottom: 1px solid #fff;
@@ -120,6 +120,7 @@ input:focus
 ul
 {
     text-align: center;
+    font-size: 40px;
 }
 
 li
@@ -141,4 +142,6 @@ li button
     height: 100%;
     display: block;
 }
+
+
 >>>>>>> b46e0f9d689c23f0a97260787a436bf0b13b221f
